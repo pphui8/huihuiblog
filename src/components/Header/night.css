@@ -1,0 +1,161 @@
+@keyframes topInAnimation {
+    0% {
+        transform: translate(0, -100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+.header_night nav {
+    position: relative;
+    width: 100%;
+    height: 70px;
+    animation: topInAnimation ease-out 2s; 
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    color: #fff;
+}
+.header_night nav ul {
+    position: absolute;
+    margin-top: 18px;
+    white-space:nowrap
+}
+.header_night nav ul li {
+    list-style: none;
+    display: inline-block;
+    user-select: none;
+}
+.header_night nav ul li h1 {
+    font-family: STHupo;
+    font-size: xx-large;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+.header_night nav ul li p {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.header_night .head {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    /* background-color: rgb(44, 44, 44); */
+}
+@keyframes fadeInAnimation { 
+    0% { 
+        opacity: 0; 
+    } 
+    100% { 
+        opacity: 1; 
+    } 
+}
+.header_night .head .profile {
+    display: inline-block;
+    z-index: 2;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    background-image: url("http://q1.qlogo.cn/g?b=qq&nk=1292750686&s=640");
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    animation: fadeInAnimation ease-out 2s; 
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+.header_night .head .hakase {
+    position: absolute;
+    z-index: 1;
+    left: 10%;
+    bottom: 41px;
+    width: 80px;
+    opacity: 0;
+    animation: fadeInAnimation ease-out 2s; 
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+}
+.header_night .head .sakamoto {
+    position: absolute;
+    z-index: 1;
+    width: 150px;
+    right: 12%;
+    top: 30px;
+    opacity: 0;
+    animation: fadeInAnimation ease-out 2s; 
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+}
+.header_night .head .lighter {
+    transform: translateY(-70px);
+    opacity: 0;
+    animation: fadeInAnimation ease-out 2s; 
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 3s;
+}
+.header_night .head .lighter .himo {
+    display: inline-block;
+    position: absolute;
+    right: 50px;
+    width: 1px;
+    height: 70px;
+    background-color: #fff;
+}
+.header_night .head .lighter .switch {
+    display: inline-block;
+    position: absolute;
+    right: 43px;
+    top: 69px;
+    border-radius: 50%;
+    height: 13px;
+    width: 13px;
+    border: 1px solid #000;
+    background-color: #fff;
+    cursor: pointer;
+}
+@keyframes expandAnimation {
+    0% { 
+        width: 0;
+        opacity: 0;
+    }
+    30% { 
+        width: 0;
+        opacity: .2;
+    }
+    100% { 
+        width: 50%;
+        opacity: 1;
+    } 
+}
+.header_night .head .line_l {
+    position: absolute;
+    z-index: 1;
+    right: 50%;
+    top: 139px;
+    height: 1px;
+    background-color: rgb(214, 214, 214);
+    animation: expandAnimation ease-out 4s; 
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+.header_night .head .line_r {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 139px;
+    height: 1px;
+    background-color: rgb(214, 214, 214);
+    animation: expandAnimation ease 4s; 
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}

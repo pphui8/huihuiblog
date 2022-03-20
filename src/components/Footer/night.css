@@ -1,0 +1,38 @@
+.footer_night .line {
+    width: 100%;
+    height: 1px;
+    background-color: rgb(168, 168, 168);
+    top: 0;
+}
+.footer_night {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    animation: fadeInAnimation ease-out 2s; 
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+.footer_night p {
+    display: inline-block;
+    position: absolute;
+    user-select: none;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgb(168, 168, 168);
+    font-size: x-small;
+    font-weight: 500;
+}
+.footer_night .at {
+    top: 8px;
+}
+.footer_night .touunn {
+    top: 28px;
+}
+.footer_night .ashiato {
+    position: absolute;
+    display: inline-block;
+    left: 80%;
+    top: 7px;
+    height: 40px;
+}
