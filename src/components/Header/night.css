@@ -86,7 +86,7 @@
 .header_night .head .sakamoto {
     position: absolute;
     z-index: 1;
-    width: 150px;
+    width: 140px;
     right: 12%;
     top: 30px;
     opacity: 0;
@@ -114,14 +114,27 @@
 .header_night .head .lighter .switch {
     display: inline-block;
     position: absolute;
-    right: 43px;
-    top: 69px;
-    border-radius: 50%;
-    height: 13px;
-    width: 13px;
+    right: 46px;
+    top: 58px;
+    border-radius: 25%;
+    height: 20px;
+    width: 7px;
     border: 1px solid #000;
-    background-color: #fff;
+    background-color: #f7c39d;
     cursor: pointer;
+}
+header .head .lighter .switchDown {
+    display: inline-block;
+    position: absolute;
+    right: 46px;
+    top: 65px;
+    border-radius: 25%;
+    height: 20px;
+    width: 7px;
+    border: 1px solid #000;
+    background-color: #f7c39d;
+    cursor: pointer;
+    transition: .5s;
 }
 @keyframes expandAnimation {
     0% { 

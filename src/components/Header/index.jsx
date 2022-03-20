@@ -3,6 +3,7 @@ import './index.css'
 import './night.css'
 
 export default function Header(props) {
+  const [switchLoc, setSwitchLoc] = React.useState("switch");
   const isNight = props.isNight;
   const setNight = props.setNight;
   const sakamoto = {
@@ -13,7 +14,13 @@ export default function Header(props) {
     "normal": "https://tvax2.sinaimg.cn/large/006z6YU4ly1h0fl171sxoj30ej0f4wgy.jpg",
     "sleep": ""
   }
-  const lightSwitch = () => setNight();
+  const lightSwitch = () => {
+    setSwitchLoc("switchDown");
+    setNight();
+    setTimeout(() => {
+      setSwitchLoc("switch");
+    }, 300);
+  }
 
   return (
     <header className={isNight ? `header_night` : ``}>
@@ -30,7 +37,7 @@ export default function Header(props) {
             <img src={isNight ? hakase.sleep : hakase.normal} alt="hakase" className="hakase" />
             <div className="lighter">
                 <div className="himo"></div>
-                <div className="switch" onClick={lightSwitch}></div>
+                <div className={switchLoc} onClick={lightSwitch}></div>
             </div>
             <div className="line_l"></div>
             <div className="line_r"></div>
