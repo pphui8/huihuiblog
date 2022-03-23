@@ -1,0 +1,12 @@
+.blogs {
+    position: relative;
+    min-height: calc(100vh - 310px);
+    height: auto;
+}
+
+.blogs .container {
+    position: relative;
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+}

@@ -1,0 +1,136 @@
+.profile_night {
+    position: relative;
+    width: 100%;
+    height: 180px;
+}
+@keyframes fadeInAnimation { 
+    0% { 
+        opacity: 0; 
+    } 
+    100% { 
+        opacity: 1; 
+    } 
+}
+.profile_night .profile {
+    display: inline-block;
+    z-index: 2;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    background-image: url("http://q1.qlogo.cn/g?b=qq&nk=1292750686&s=640");
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    animation: fadeInAnimation ease-out 2s; 
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+.profile_night .hakase {
+    position: absolute;
+    z-index: 1;
+    left: 10%;
+    bottom: 41px;
+    width: 80px;
+    opacity: 0;
+    animation: fadeInAnimation ease-out 2s; 
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+    user-select: none;
+}
+.profile_night .sakamoto {
+    position: absolute;
+    z-index: 1;
+    width: 140px;
+    right: 12%;
+    top: 30px;
+    opacity: 0;
+    animation: fadeInAnimation ease-out 2s; 
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+    user-select: none;
+}
+.profile_night .lighter {
+    transform: translateY(-70px);
+    opacity: 0;
+    animation: fadeInAnimation ease-out 2s; 
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 3s;
+}
+.profile_night .lighter .himo {
+    display: inline-block;
+    position: absolute;
+    right: 50px;
+    width: 1px;
+    height: 70px;
+    background-color: #fff;
+}
+.profile_night .lighter .switch {
+    display: inline-block;
+    position: absolute;
+    right: 46px;
+    top: 58px;
+    border-radius: 25%;
+    height: 20px;
+    width: 7px;
+    border: 1px solid #000;
+    background-color: #f7c39d;
+    cursor: pointer;
+    transition: .5s;
+}
+.profile_night .lighter .switchDown {
+    display: inline-block;
+    position: absolute;
+    right: 46px;
+    top: 65px;
+    border-radius: 25%;
+    height: 20px;
+    width: 7px;
+    border: 1px solid #000;
+    background-color: #f7c39d;
+    cursor: pointer;
+    transition: .5s;
+}
+@keyframes expandAnimation {
+    0% { 
+        width: 0;
+        opacity: 0;
+    }
+    30% { 
+        width: 0;
+        opacity: .2;
+    }
+    100% { 
+        width: 50%;
+        opacity: 1;
+    } 
+}
+.profile_night .line_l {
+    position: absolute;
+    z-index: 1;
+    right: 50%;
+    top: 139px;
+    height: 1px;
+    background-color: rgb(214, 214, 214);
+    animation: expandAnimation ease-out 4s; 
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+.profile_night .line_r {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 139px;
+    height: 1px;
+    background-color: rgb(214, 214, 214);
+    animation: expandAnimation ease 4s; 
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}

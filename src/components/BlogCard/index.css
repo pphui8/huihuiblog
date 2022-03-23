@@ -1,15 +1,3 @@
-.blogs {
-    position: relative;
-    min-height: calc(100vh - 310px);
-}
-
-.blogs .container {
-    position: relative;
-    width: 80%;
-    height: 100px;
-    left: 50%;
-    transform: translateX(-50%);
-}
 @keyframes blogInAnimation {
     0% {
         transform: translateY(70px);
@@ -20,34 +8,30 @@
         opacity: 1;
     }
 }
-
-.blog_night {
+.blog {
     position: relative;
     width: 100%;
     height: 180px;
-    border: 1px solid rgb(180, 180, 180);
+    border: 1px solid rgb(77, 77, 77);
     border-radius: 30px;
     overflow: hidden;
-    transition: .5s;
+    transition: 1s;
     opacity: 0;
     animation: blogInAnimation ease-out 2s; 
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     animation-delay: 3s;
-    color: #fff;
+    margin-bottom: 30px;
 }
-
-.blog_night:hover {
-    box-shadow: 0px 0px 14px 0px #d0d0d0;
+.blog:hover {
+    box-shadow: 5px 4px 10px 7px #d0d0d0;
 }
-
-.blog_night .title {
+.blog .title {
     position: relative;
     width: 100%;
     height: 45px;
 }
-
-.blog_night .title p {
+.blog .title p {
     position: absolute;
     left: 40px;
     top: 50%;
@@ -55,23 +39,20 @@
     font-weight: 600;
     font-size: 19px;
 }
-
-.blog_night .disc {
+.blog .disc {
     position: relative;
     width: 100%;
     height: 100px;
 }
-
-.blog_night .disc p {
+.blog .disc p {
     position: absolute;
     left: 40px;
     top: 10%;
     font-weight: 300;
     font-size: 14px;
 }
-
-.blog_night .blog_line {
+.blog .blog_line {
     width: 100%;
     height: 1px;
-    background-color: #666666;
+    background-color: #d0d0d0;
 }
