@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
-import 'github-markdown-css'
-import 'github-markdown-css/github-markdown-dark.css'
+import '../../github-markdown-dark.css'
+import '../../github-markdown-light.css'
 import './index.css'
 
 export default function AhoutMe(props) {
-  const [article, setArticle] = useState("加载中....");
+  const [article, setArticle] = useState("");
   const isNight = props.isNight;
   const getReadMe = () => {
     fetch(`https://raw.githubusercontent.com/pphui8/pphui8/main/README.md`)

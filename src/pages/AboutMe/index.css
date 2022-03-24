@@ -1,6 +1,6 @@
 .aboutMe {
     position: relative;
-    min-height: calc(300px);
+    min-height: calc(100vh - 173px)
 }
 .aboutMe li {
     list-style: none;
