@@ -56,48 +56,6 @@
     animation-delay: 2s;
     user-select: none;
 }
-.profile_night .lighter {
-    transform: translateY(-70px);
-    opacity: 0;
-    animation: fadeInAnimation ease-out 2s; 
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    animation-delay: 3s;
-}
-.profile_night .lighter .himo {
-    display: inline-block;
-    position: absolute;
-    right: 50px;
-    width: 1px;
-    height: 70px;
-    background-color: #fff;
-}
-.profile_night .lighter .switch {
-    display: inline-block;
-    position: absolute;
-    right: 46px;
-    top: 58px;
-    border-radius: 25%;
-    height: 20px;
-    width: 7px;
-    border: 1px solid #000;
-    background-color: #f7c39d;
-    cursor: pointer;
-    transition: .5s;
-}
-.profile_night .lighter .switchDown {
-    display: inline-block;
-    position: absolute;
-    right: 46px;
-    top: 65px;
-    border-radius: 25%;
-    height: 20px;
-    width: 7px;
-    border: 1px solid #000;
-    background-color: #f7c39d;
-    cursor: pointer;
-    transition: .5s;
-}
 @keyframes expandAnimation {
     0% { 
         width: 0;

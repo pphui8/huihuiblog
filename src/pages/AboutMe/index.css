@@ -1,0 +1,34 @@
+.aboutMe {
+    position: relative;
+    min-height: calc(100vh - 400pxpx);
+}
+.aboutMe li {
+    list-style: none;
+}
+.aboutMe .container {
+    position: relative;
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    /* background-color: #39c5bb; */
+}
+@keyframes blogInAnimation {
+    0% {
+        transform: translateY(70px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.aboutMe .container .article {
+    margin-top: 50px;
+    border: 1px solid #000;
+    border-radius: 25px;
+    padding: 30px;
+    margin-bottom: 30px;
+    animation: blogInAnimation ease-out 2s; 
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}

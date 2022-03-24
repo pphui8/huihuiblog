@@ -1,8 +1,10 @@
 import React from 'react'
 import Header from './components/Header'
-import Profile from './components/Profile'
-import BlogContainer from './components/BlogContainer'
+import Home from './pages/Home'
+import AboutMe from './pages/AboutMe'
+import API from './pages/API'
 import Footer from './components/Footer'
+import { Routes, Route } from 'react-router-dom'
 
 import './App.css'
 import './night.css'
@@ -25,9 +27,13 @@ export default function App() {
 
   return (
     <div className={isNight ? `body_night` : ``}>
-        <Header isNight={isNight}></Header>
-        <Profile isNight={isNight} setNight={lightSwitch}></Profile>
-        <BlogContainer isNight={isNight}></BlogContainer>
+        <Header isNight={isNight} setNight={lightSwitch}></Header>
+        {/* 注册路由 */}
+        <Routes>
+          <Route path='/' element={<Home isNight={isNight}></Home>}></Route>
+          <Route path='/API' element={<API isNight={isNight}></API>}></Route>
+          <Route path='/aboutme' element={<AboutMe isNight={isNight}></AboutMe>}></Route>
+        </Routes>
         <Footer isNight={isNight}></Footer>
     </div>
   )

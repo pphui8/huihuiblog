@@ -32,8 +32,58 @@
     font-size: xx-large;
     margin-left: 25px;
     margin-right: 25px;
+    color: #fff;
+    cursor: default;
+}
+.header_night nav ul li a {
+    text-decoration: none;
 }
 .header_night nav ul li p {
     margin-right: 10px;
     margin-left: 10px;
+    color: #fff;
+    cursor: default;
+    text-decoration: none;
+}
+.header_night .lighter {
+    transform: translateY(-80px);
+    opacity: 0;
+    animation: fadeInAnimation ease-out 2s; 
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 3s;
+}
+.header_night .lighter .himo {
+    display: inline-block;
+    position: absolute;
+    right: 50px;
+    width: 1px;
+    height: 70px;
+    background-color: #fff;
+}
+.header_night .lighter .switch {
+    display: inline-block;
+    position: absolute;
+    right: 46px;
+    top: 58px;
+    border-radius: 25%;
+    height: 20px;
+    width: 7px;
+    border: 1px solid #000;
+    background-color: #f7c39d;
+    cursor: pointer;
+    transition: .5s;
+}
+.header_night .lighter .switchDown {
+    display: inline-block;
+    position: absolute;
+    right: 46px;
+    top: 65px;
+    border-radius: 25%;
+    height: 20px;
+    width: 7px;
+    border: 1px solid #000;
+    background-color: #f7c39d;
+    cursor: pointer;
+    transition: .5s;
 }

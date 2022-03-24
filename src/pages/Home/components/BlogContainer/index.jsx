@@ -8,11 +8,6 @@ export default function BlogContainer(props) {
     <div className="blogs">
         <div className="container">
           <BlogCard isNight={isNight}></BlogCard>
-          <BlogCard isNight={isNight}></BlogCard>
-          <BlogCard isNight={isNight}></BlogCard>
-          <BlogCard isNight={isNight}></BlogCard>
-          <BlogCard isNight={isNight}></BlogCard>
-          <BlogCard isNight={isNight}></BlogCard>
         </div>
     </div>
   )
