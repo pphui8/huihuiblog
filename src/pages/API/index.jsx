@@ -1,7 +1,28 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import ReactMarkdown from 'react-markdown'
+import 'github-markdown-css'
+import 'github-markdown-css/github-markdown-dark.css'
+import './index.css'
 
-export default function API() {
+export default function AhoutMe(props) {
+  const [article, setArticle] = useState("加载中....");
+  const isNight = props.isNight;
+  const getReadMe = () => {
+    fetch(`https://raw.githubusercontent.com/pphui8/pphui8/main/README.md`)
+      .then(response => response.text())
+      .then(res => setArticle(res))
+      .catch(err => console.log('Request Failed', err));
+  }
+  useEffect(async () => {
+    getReadMe();
+  }, [])
   return (
-    <div>API</div>
+    <div className='API'>
+      <div className="APIContainer">
+        <div className={isNight ? 'article markdown-body-dark' : 'article markdown-body'}>
+          <ReactMarkdown children={article}></ReactMarkdown>
+        </div>
+      </div>
+    </div>
   )
 }

@@ -28,9 +28,9 @@ header nav ul li {
 }
 header nav ul li h1 {
     font-family: STHupo;
-    font-size: xx-large;
-    margin-left: 25px;
-    margin-right: 25px;
+    font-size: 28px;
+    margin-left: 15px;
+    margin-right: 7px;
     color: black;
     cursor: default;
 }

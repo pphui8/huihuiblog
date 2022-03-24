@@ -1,11 +1,11 @@
-.aboutMe {
+.API {
     position: relative;
     min-height: calc(300px);
 }
-.aboutMe li {
+.API li {
     list-style: none;
 }
-.aboutMe .container {
+.API .APIContainer {
     position: relative;
     width: 80%;
     left: 50%;
@@ -22,7 +22,7 @@
         opacity: 1;
     }
 }
-.aboutMe .container .article {
+.API .APIContainer .article {
     margin-top: 50px;
     border: 1px solid #000;
     border-radius: 25px;
@@ -32,7 +32,7 @@
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
-.aboutMe .container .APILink {
+.API .APIContainer .APILink {
     position: absolute;
     bottom: 40px;
     right: 40px;
