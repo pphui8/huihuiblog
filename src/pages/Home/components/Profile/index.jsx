@@ -10,7 +10,7 @@ export default function Profile(props) {
   }
   const hakase =  {
     "normal": "https://tvax2.sinaimg.cn/large/006z6YU4ly1h0fl171sxoj30ej0f4wgy.jpg",
-    "sleep": ""
+    "sleep": "https://tvax1.sinaimg.cn/large/006z6YU4ly1h0lx84djhej30gt0gq76p.jpg"
   }
   return (
     <div className={isNight ? "profile_night" : "head"}>

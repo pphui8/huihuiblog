@@ -10,3 +10,9 @@
     left: 50%;
     transform: translateX(-50%);
 }
+.blogs .tomodati {
+    position: absolute;
+    bottom: 10%;
+    left: -41px;
+    width: 100px;
+}

@@ -28,6 +28,7 @@
     border-radius: 25px;
     padding: 30px;
     margin-bottom: 30px;
+    min-height: calc(100vh - 173px);
     animation: blogInAnimation ease-out 2s; 
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
@@ -36,4 +37,10 @@
     position: absolute;
     bottom: 40px;
     right: 40px;
+}
+.API .sanningumi {
+    position: relative;
+    bottom: -16px;
+    left: 10%;
+    width: 150px;
 }

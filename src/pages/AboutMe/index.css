@@ -37,3 +37,9 @@
     bottom: 40px;
     right: 40px;
 }
+.aboutMe .container .kakoiitoomou {
+    position: relative;
+    bottom: -4px;
+    left: 70%;
+    width: 150px;
+}
