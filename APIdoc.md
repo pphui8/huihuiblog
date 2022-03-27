@@ -20,7 +20,6 @@
 > ##### expected return
 ```json
 {
-    "status": 200,
     "index": {
         "name": "desciprtion",
         ........

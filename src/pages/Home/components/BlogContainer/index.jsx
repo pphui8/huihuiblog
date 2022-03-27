@@ -21,7 +21,11 @@ export default function BlogContainer(props) {
     })
       .then(response => response.json())
       .then(res => setBlogs(eval("(" + res.index + ")")))
-      .catch(err => console.log('Request Failed', err));
+      .catch(_err => {
+        let container = document.querySelector(".blogs .container");
+        let error_elem = document.createTextNode("erro: require index of blog failed");
+        container.appendChild(error_elem);
+      });
   }
 
   useEffect(() => {
