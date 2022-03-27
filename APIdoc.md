@@ -1,52 +1,56 @@
-```这是什么？```  huihuiblog的后端接口文档~~大作业加分用的~~
+```What`s this？```  &emsp;APi document of huihuiblog ~~better score for  curriculum design~~
 
-```如何使用？``` &emsp;`root` + `路由规则` 即可
+```how to use？``` &emsp;`root` + `router rule` 
 
-```接口规范？``` 本站使用RESTful设计风格对接口设计
+```API specification？``` RESTful api
 
 ```root:``` &emsp; https://api.pphui8.me
 
 ---
 
-#### ```GET``` / &emsp;&emsp;>> 接口测试
-> ##### 预期返回
+#### ```GET``` / &emsp;&emsp;>> API test
+> ##### expected return
 ```json
 {
     "status": 200
 }
 ```
 
-#### ```GET``` / index &emsp;&emsp;>> 获取文章列表
-> ##### 预期返回
+#### ```GET``` / index &emsp;&emsp;>> get index of blog
+> ##### expected return
+```json
+{
+    "status": 200,
+    "index": {
+        "name": "desciprtion",
+        ........
+    }        
+}
+```
+
+#### ```GET``` / blog / { id } &emsp;&emsp;>> get blog
+> ##### expected return
 ```json
 {
     // 待编辑
 }
 ```
 
-#### ```GET``` / blog / { id } &emsp;&emsp;>> 获取文章
-> ##### 预期返回
+#### ```POST``` / addblog &emsp;&emsp;>> add blog
+> ##### request body format
+```json
+{
+    // 待编辑
+}
+```
+> ##### expected return
 ```json
 {
     // 待编辑
 }
 ```
 
-#### ```POST``` / addblog &emsp;&emsp;>> 添加文章
-> ##### 请求体格式
-```json
-{
-    // 待编辑
-}
-```
-> ##### 预期返回
-```json
-{
-    // 待编辑
-}
-```
-
-#### ```DELETE``` / delblog &emsp;&emsp;>> 删除文章
+#### ```DELETE``` / delblog &emsp;&emsp;>> delete blog
 > ##### 预期返回
 ```json
 {

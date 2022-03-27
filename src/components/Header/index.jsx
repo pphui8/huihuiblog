@@ -8,7 +8,6 @@ export default function Header(props) {
   const [switchLoc, setSwitchLoc] = React.useState("switch");
   const setNight = props.setNight;
   const lightSwitch = () => {
-    console.log(setNight)
     // 设置拉开关的小动画
     setSwitchLoc("switchDown");
     setNight();

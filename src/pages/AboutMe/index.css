@@ -1,6 +1,6 @@
 .aboutMe {
     position: relative;
-    min-height: calc(100vh - 173px)
+    min-height: calc(100vh - 173px);
 }
 .aboutMe li {
     list-style: none;
@@ -9,8 +9,8 @@
     position: relative;
     width: 80%;
     left: 50%;
+    min-height: calc(100vh - 173px);
     transform: translateX(-50%);
-    /* background-color: #39c5bb; */
 }
 @keyframes blogInAnimation {
     0% {
@@ -27,7 +27,8 @@
     border: 1px solid #000;
     border-radius: 25px;
     padding: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 105px;
+    min-height: calc(100vh - 200px);
     animation: blogInAnimation ease-out 2s; 
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
@@ -37,9 +38,22 @@
     bottom: 40px;
     right: 40px;
 }
-.aboutMe .container .kakoiitoomou {
-    position: relative;
-    bottom: -4px;
-    left: 70%;
+@keyframes fadeInAnimation { 
+    0% { 
+        opacity: 0; 
+    } 
+    100% { 
+        opacity: 1; 
+    } 
+}
+.aboutMe .kakoiitoomou {
+    position: absolute;
+    bottom: -106px;
+    left: 55%;
     width: 150px;
+    opacity: 0;
+    animation: fadeInAnimation ease-out 2s; 
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
 }

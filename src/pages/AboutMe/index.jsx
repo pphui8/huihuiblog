@@ -26,8 +26,8 @@ export default function AhoutMe(props) {
         <div className={isNight ? 'article markdown-body-dark' : 'article markdown-body'}>
           <ReactMarkdown children={article}></ReactMarkdown>
         </div>
-        <img className='kakoiitoomou' src={isNight ? kakoiitoomou.night : kakoiitoomou.light} alt="かっこういいと思うこと！" />
       </div>
+      <img className='kakoiitoomou' src={isNight ? kakoiitoomou.night : kakoiitoomou.light} alt="かっこういいと思うこと！" />
     </div>
   )
 }
