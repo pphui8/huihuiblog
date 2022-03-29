@@ -21,8 +21,8 @@
     animation: blogInAnimation ease-out 2s; 
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
-    animation-delay: 3s;
-    color: #fff;
+    animation-delay: 1s;
+    color: #fff !important;
     margin-bottom: 30px;
 }
 
@@ -36,8 +36,17 @@
     height: 45px;
 }
 
+.blog_night .title::after {
+    content: ">";
+    position: absolute;
+    color: #fff;
+    right: 32px;
+    top: 14px;
+}
+
 .blog_night .title p {
     position: absolute;
+    color: #fff;
     left: 40px;
     top: 50%;
     transform: translateY(-50%);

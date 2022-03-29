@@ -1,21 +1,25 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from './components/Header'
 import Home from './pages/Home'
 import API from './pages/API'
 import AboutMe from './pages/AboutMe'
+import Article from './pages/Article'
 import Footer from './components/Footer'
 import { Routes, Route } from 'react-router-dom'
+import { nanoid } from 'nanoid'
 
 import './App.css'
 import './night.css'
 
-export default function App() {
+let origin_light = false;
+export default function App(props) {
   // 保存主题颜色
   const [isNight, setNight] = React.useState(false);
-
   // 设置主题颜色
   const lightSwitch = () => {
     setNight(!isNight);
+    // 状态存储到 localstorage
+    window.localStorage.setItem("isNight", !isNight);
     // 设置手机状态栏颜色
     const target = document.querySelector("#phone-state-content");
     if(isNight) {
@@ -25,6 +29,13 @@ export default function App() {
     }
   }
 
+  useEffect(() => {
+    origin_light = window.localStorage.getItem("isNight");
+    if(isNight.toString() != origin_light.toString()) {
+      setNight(Boolean(origin_light.toString()));
+    }
+  }, [])
+
   return (
     <div className={isNight ? `body_night` : ``}>
         <Header isNight={isNight} setNight={lightSwitch}></Header>
@@ -33,6 +44,7 @@ export default function App() {
           <Route path='/' element={<Home isNight={isNight}></Home>}></Route>
           <Route path='/API' element={<API isNight={isNight}></API>}></Route>
           <Route path='/aboutme' element={<AboutMe isNight={isNight}></AboutMe>}></Route>
+          <Route path='/article/:name' element={<Article isNight={isNight}></Article>}></Route>
         </Routes>
         <Footer isNight={isNight}></Footer>
     </div>

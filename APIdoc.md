@@ -20,10 +20,14 @@
 > ##### expected return
 ```json
 {
-    "index": {
-        "name": "desciprtion",
-        ........
-    }        
+    "index": [
+        {
+            "id": 1,
+            "name": "pphui8",
+            "descript": "hello world",
+        },
+        ......
+    ] 
 }
 ```
 
@@ -31,21 +35,31 @@
 > ##### expected return
 ```json
 {
-    // 待编辑
+    "status": 200,
+    "blog_root": "https://xx.xxx.xxx",
 }
 ```
 
-#### ```POST``` / addblog &emsp;&emsp;>> add blog
+#### ```POST``` / addblog / token &emsp;&emsp;>> add blog
 > ##### request body format
 ```json
 {
-    // 待编辑
+    "blog_name": "blog_name",
+    "desc": "blog description",
+    "value": "pphui8",
+    "token": "xxxx",
 }
 ```
 > ##### expected return
 ```json
+# success
 {
-    // 待编辑
+    "status": "success"
+}
+# failed
+{
+    "status": "failed",
+    "error": "failed to add blog"
 }
 ```
 

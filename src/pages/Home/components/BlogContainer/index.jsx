@@ -23,7 +23,7 @@ export default function BlogContainer(props) {
       .then(res => setBlogs(eval("(" + res.index + ")")))
       .catch(_err => {
         let container = document.querySelector(".blogs .container");
-        let error_elem = document.createTextNode("erro: require index of blog failed");
+        let error_elem = document.createTextNode("error: require index of blog failed");
         container.appendChild(error_elem);
       });
   }
@@ -34,19 +34,21 @@ export default function BlogContainer(props) {
 
   // 更新本地列表
   const upate = () => {
-    for(let blog in blogs) {
+    for(let blog of blogs) {
       let is_f = false;
       for(let i = 0; i < index.length; ++i) {
-        if(index[i] == blog) {
+        if(index[i].id === blog.id) {
           is_f = true;
           break;
         }
       }
       if(!is_f) {
-        // 插入到列表前面
-        index.unshift(blog)
+        index.push(blog);
       }
     }
+    index.sort((a, b) => {
+      return b.id - a.id
+    })
   }
 
   return (
@@ -56,8 +58,8 @@ export default function BlogContainer(props) {
             upate()
           }
           {
-            index.map((value, index) => {
-              return <BlogCard isNight={isNight} key={index} title={value} desc={blogs[value]}></BlogCard>
+            index.map((elem) => {
+              return <BlogCard isNight={isNight} key={elem.id} title={elem.name} desc={elem.descript}></BlogCard>
             })
           }
         </div>
