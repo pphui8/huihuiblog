@@ -64,7 +64,7 @@
 ```
 
 #### ```DELETE``` / delblog &emsp;&emsp;>> delete blog
-> ##### 预期返回
+> ##### expected return
 ```json
 {
     // 待编辑

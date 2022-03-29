@@ -6,7 +6,6 @@ import AboutMe from './pages/AboutMe'
 import Article from './pages/Article'
 import Footer from './components/Footer'
 import { Routes, Route } from 'react-router-dom'
-import { nanoid } from 'nanoid'
 
 import './App.css'
 import './night.css'
@@ -31,6 +30,11 @@ export default function App(props) {
 
   useEffect(() => {
     origin_light = window.localStorage.getItem("isNight");
+    // 如果是第一次启动
+    if(origin_light == null) {
+      window.localStorage.setItem("isNight", false);
+      origin_light = false;
+    }
     if(isNight.toString() != origin_light.toString()) {
       setNight(Boolean(origin_light.toString()));
     }
@@ -45,6 +49,7 @@ export default function App(props) {
           <Route path='/API' element={<API isNight={isNight}></API>}></Route>
           <Route path='/aboutme' element={<AboutMe isNight={isNight}></AboutMe>}></Route>
           <Route path='/article/:name' element={<Article isNight={isNight}></Article>}></Route>
+          <Route path='/*' element={<Home isNight={isNight}></Home>}></Route>
         </Routes>
         <Footer isNight={isNight}></Footer>
     </div>
