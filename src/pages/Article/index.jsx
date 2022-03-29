@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { Children, useEffect, useState } from 'react'
 import { useLocation } from "react-router-dom";
 import ReactMarkdown from 'react-markdown'
 import { Buffer } from 'buffer';
@@ -9,6 +9,8 @@ import './night.css'
 
 let cur_index = [];
 let cur_file = [];
+let cur_url = null;
+let pre_url = null;
 
 export default function Article(props) {
   const root = `api.pphui8.me`;
@@ -31,8 +33,9 @@ export default function Article(props) {
         return blogRoot;
       })
       .then((blogRoot) => {
+        cur_url = `https://api.github.com/repos/pphui8/` + blogRoot + `/git/trees/main`;
         // 获取目录
-        fetch(`https://api.github.com/repos/pphui8/` + blogRoot + `/git/trees/main`)
+        fetch(cur_url)
           .then(response => response.json())
           .then(res => {
             deal_index(res);
@@ -109,7 +112,25 @@ export default function Article(props) {
   }
 
   function toPath(url) {
-    
+    // 回退
+    if(url == null) {
+      if(pre_url != null) {
+        toPath(pre_url);
+        pre_url = null;
+      }
+      return;
+    }
+    cur_index = [];
+    cur_file = [];
+    pre_url = cur_url;
+    // 获取目录
+    fetch(url)
+    .then(response => response.json())
+    .then(res => {
+      deal_index(res);
+      return res;
+    })
+    .catch(err => console.log('Request Failed', err));
   }
 
   function showFile(url) {
@@ -137,7 +158,7 @@ export default function Article(props) {
           }
         </ul>
         <div className={isNight ? 'article markdown-body-dark' : 'article markdown-body'}>
-          <ReactMarkdown children={article} id="markdownArticle"></ReactMarkdown>
+          <ReactMarkdown children={article}></ReactMarkdown>
         </div>
       </div>
     </div>
