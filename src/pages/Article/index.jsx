@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import ReactMarkdown from 'react-markdown'
 import { Buffer } from 'buffer';
 import { AiFillFile, AiOutlineFolder } from 'react-icons/ai'
+import { nanoid } from 'nanoid'
 import '../../github-markdown-dark.css'
 import '../../github-markdown-light.css'
 import './index.css'
@@ -113,15 +114,17 @@ export default function Article(props) {
   }
 
   function toPath(url) {
-    setArticle("Loading...");
     // 回退
     if(url === null) {
       if(pre_url != null) {
         toPath(pre_url);
         pre_url = null;
+      } else {
+        alert("you are already at the root of this blog");
       }
       return;
     }
+    setArticle("Loading...")
     cur_index = [];
     cur_file = [];
     pre_url = cur_url;
@@ -150,13 +153,13 @@ export default function Article(props) {
       <div className="container">
         <ul className={isNight ? `index_night` : `index`} id="blogTreeContainer">
           {
-            cur_index.map((value, id) => {
-              return <li key={id} onClick={()=>toPath(value.url)}><AiOutlineFolder/>{value.name}</li>
+            cur_index.map((value) => {
+              return <li key={nanoid()} onClick={()=>toPath(value.url)}><AiOutlineFolder/>{value.name}</li>
             })
           }
           {
-            cur_file.map((value, id) => {
-              return <li key={id} onClick={()=>showFile(value.url)}><AiFillFile/>{value.name}</li>
+            cur_file.map((value) => {
+              return <li key={nanoid()} onClick={()=>showFile(value.url)}><AiFillFile/>{value.name}</li>
             })
           }
         </ul>
