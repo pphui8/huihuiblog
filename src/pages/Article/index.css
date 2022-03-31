@@ -15,6 +15,7 @@
 }
 .article li {
     list-style: none;
+    position: relative;
 }
 .article .container {
     position: relative;
@@ -43,6 +44,12 @@
 }
 .article .container .index li:active {
     background-color: rgba(148, 148, 148, 0.459);
+}
+.article .container svg {
+    float: left;
+    position: absolute;
+    top: 7px;
+    left: 10px;
 }
 @keyframes blogInAnimation {
     0% {
