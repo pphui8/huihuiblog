@@ -5,7 +5,7 @@ import API from './pages/API'
 import AboutMe from './pages/AboutMe'
 import Article from './pages/Article'
 import Footer from './components/Footer'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 
 import './App.css'
 import './night.css'
@@ -35,7 +35,7 @@ export default function App(props) {
       window.localStorage.setItem("isNight", false);
       origin_light = false;
     }
-    if(isNight.toString() != origin_light.toString()) {
+    if(isNight.toString() !== origin_light.toString()) {
       setNight(Boolean(origin_light.toString()));
     }
   }, [])
@@ -49,7 +49,7 @@ export default function App(props) {
           <Route path='/API' element={<API isNight={isNight}></API>}></Route>
           <Route path='/aboutme' element={<AboutMe isNight={isNight}></AboutMe>}></Route>
           <Route path='/article/:name' element={<Article isNight={isNight}></Article>}></Route>
-          <Route path='/*' element={<Home isNight={isNight}></Home>}></Route>
+          <Route path='*' element={<Navigate to="/" />}></Route>
         </Routes>
         <Footer isNight={isNight}></Footer>
     </div>

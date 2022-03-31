@@ -1,4 +1,4 @@
-import React, { Children, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useLocation } from "react-router-dom";
 import ReactMarkdown from 'react-markdown'
 import { Buffer } from 'buffer';
@@ -53,13 +53,13 @@ export default function Article(props) {
   // 处理项目文件树
   let cur_root;
   const deal_index = (blogIndex) => {
-    if(cur_index.length == 0) {
+    if(cur_index.length === 0) {
       cur_index.push({
         "name": "..",
         "url": null
       });
     }
-    if(cur_root == null) {
+    if(cur_root === null) {
       cur_root = title;
     }
     if(blogIndex.tree === undefined) {
@@ -70,7 +70,7 @@ export default function Article(props) {
       if(index.mode === "040000") {
         let is_f = false;
         for(let cur of cur_index) {
-          if(cur.name == index.path) {
+          if(cur.name === index.path) {
             is_f = true;
             break;
           }
@@ -83,7 +83,7 @@ export default function Article(props) {
       } else {  // 是文件
         let is_f = false;
         for(let cur of cur_file) {
-          if(cur.name == index.path) {
+          if(cur.name === index.path) {
             is_f = true;
             break;
           }
@@ -113,7 +113,7 @@ export default function Article(props) {
 
   function toPath(url) {
     // 回退
-    if(url == null) {
+    if(url === null) {
       if(pre_url != null) {
         toPath(pre_url);
         pre_url = null;
