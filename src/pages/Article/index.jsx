@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useLocation } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import ReactMarkdown from 'react-markdown'
 import { Buffer } from 'buffer';
 import { AiFillFile, AiOutlineFolder } from 'react-icons/ai'
@@ -16,7 +16,8 @@ let pre_url = null;
 
 export default function Article(props) {
   const root = `api.pphui8.me`;
-  const title = useLocation().pathname.split("/").pop();
+  const [params] = useSearchParams();
+  const title = params.get("id");
   const [blogRoot, setBlogRoot] = useState("");
   const [article, setArticle] = useState("Loading...");
   const isNight = props.isNight;

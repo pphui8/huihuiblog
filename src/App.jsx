@@ -48,7 +48,7 @@ export default function App(props) {
           <Route path='/' element={<Home isNight={isNight}></Home>}></Route>
           <Route path='/API' element={<API isNight={isNight}></API>}></Route>
           <Route path='/aboutme' element={<AboutMe isNight={isNight}></AboutMe>}></Route>
-          <Route path='/article/:name' element={<Article isNight={isNight}></Article>}></Route>
+          <Route path='/article' element={<Article isNight={isNight}></Article>}></Route>
           <Route path='*' element={<Navigate to="/" />}></Route>
         </Routes>
         <Footer isNight={isNight}></Footer>

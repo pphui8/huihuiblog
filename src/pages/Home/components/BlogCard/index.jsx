@@ -9,7 +9,7 @@ export default function BlogCard(props) {
   const desc = props.desc;
   return (
       <div className={isNight ? `blog_night` : `blog`}>
-        <Link to={"/article/" + title}>
+        <Link to={`/article/?id=${title}`}>
           <div className="title"><p>{title}</p></div>
         </Link>
         <div className="blog_line"></div>
