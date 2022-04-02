@@ -20,15 +20,11 @@ export default function App(props) {
     // 状态存储到 localstorage
     window.localStorage.setItem("isNight", !isNight);
     // 设置手机状态栏颜色
-    const target = document.querySelector("#phone-state-content");
+    const target = document.querySelector("#theme-color");
     if(isNight) {
       target.setAttribute("content", "#fff");
-      let themeColor = document.querySelector("#theme-color");
-      themeColor.setAttribute("content", "#fff");
     } else {
       target.setAttribute("content", "#2e2e2e");
-      let themeColor = document.querySelector("#theme-color");
-      themeColor.setAttribute("content", "#2e2e2e");
     }
   }
 
@@ -38,8 +34,8 @@ export default function App(props) {
     if(origin_light == null) {
       window.localStorage.setItem("isNight", false);
       origin_light = false;
-      let themeColor = document.querySelector("#theme-color");
-      themeColor.setAttribute("content", "#fff");
+      const target = document.querySelector("#theme-color");
+      target.setAttribute("content", "#fff");
     }
     if(isNight.toString() !== origin_light.toString()) {
       setNight(Boolean(origin_light.toString()));
