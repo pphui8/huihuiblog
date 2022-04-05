@@ -101,12 +101,12 @@ export default function Article(props) {
         let has_rm = false;
         for(let cur of cur_file) {
           if(cur.name === "README.md") {
-            showFile(cur.url);
+            showFile(cur.url, cur.name);
             has_rm = true;
             break;
           }
         }
-        if(!has_rm) showFile(cur_file[0].url);
+        if(!has_rm) showFile(cur_file[0].url, cur_file[0].name);
       }
     }
     // 重新渲染组件
@@ -138,12 +138,15 @@ export default function Article(props) {
     .catch(err => console.log('Request Failed', err));
   }
 
-  function showFile(url) {
+  function showFile(url, filename) {
     setArticle("Loading...");
     fetch(url)
       .then(response => response.json())
       .then(article => {
-        setArticle(new Buffer.from(article.content,  article.encoding).toString())
+        let tmp = new Buffer.from(article.content,  article.encoding).toString();
+        // 如果不是 Markdown 则使用代码块包裹
+        if(filename.search(".md") === -1) tmp = "```" + tmp + "```";
+        setArticle(tmp);
       })
       .catch(err => console.log('Request Failed', err));
   }
@@ -159,7 +162,7 @@ export default function Article(props) {
           }
           {
             cur_file.map((value) => {
-              return <li key={nanoid()} onClick={()=>showFile(value.url)}><AiFillFile/>{value.name}</li>
+              return <li key={nanoid()} onClick={()=>showFile(value.url, value.name)}><AiFillFile/>{value.name}</li>
             })
           }
         </ul>

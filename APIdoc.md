@@ -25,6 +25,7 @@
             "id": 1,
             "name": "pphui8",
             "descript": "hello world",
+            "tag": "tag",
         },
         ......
     ] 
@@ -40,7 +41,7 @@
 }
 ```
 
-#### ```POST``` / addblog / token &emsp;&emsp;>> add blog
+#### ```POST``` / addblog  &emsp;&emsp;>> add blog
 > ##### request body format
 ```json
 {
@@ -48,8 +49,17 @@
     "desc": "blog description",
     "value": "pphui8",
     "token": "xxxx",
+    "tag": "tag",
 }
 ```
+> ```
+> #### tag
+> 1.test  
+> 2.note  
+> 3.blog  
+> 4.code  
+> ```
+
 > ##### expected return
 ```json
 # success
@@ -63,10 +73,16 @@
 }
 ```
 
-#### ```DELETE``` / delblog &emsp;&emsp;>> delete blog
+#### ```DELETE``` / delblog / <blog_name> / <token>  &emsp;&emsp;>> delete blog
 > ##### expected return
 ```json
+// success
 {
-    // 待编辑
+    "status": "success"
+}
+// failed
+{
+    "status": "failed",
+    "error": "wrong token"
 }
 ```

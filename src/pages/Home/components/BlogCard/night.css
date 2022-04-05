@@ -73,3 +73,14 @@
     height: 1px;
     background-color: #666666;
 }
+.blog_night .blog_footer .tag {
+    position: relative;
+    height: 21.5px;
+    width: 47px;
+    top: 4px;
+    left: 42px;
+    border: 0.5px solid rgb(199, 199, 199);
+    color: rgb(236, 236, 236);
+    border-radius: 5px;
+    text-align: center;
+}

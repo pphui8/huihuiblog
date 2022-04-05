@@ -3,6 +3,8 @@ import ReactMarkdown from 'react-markdown'
 import '../../github-markdown-dark.css'
 import '../../github-markdown-light.css'
 import './index.css'
+import Filing from './Filing'
+import Message from './Message'
 
 export default function AhoutMe(props) {
   const [article, setArticle] = useState("Loading...");
@@ -26,6 +28,8 @@ export default function AhoutMe(props) {
         <div className={isNight ? 'article markdown-body-dark' : 'article markdown-body'}>
           <ReactMarkdown children={article}></ReactMarkdown>
         </div>
+        <Filing isNight={isNight}></Filing>
+        <Message isNight={isNight}></Message>
       </div>
       <img className='kakoiitoomou' src={isNight ? kakoiitoomou.night : kakoiitoomou.light} alt="かっこういいと思うこと！" />
     </div>

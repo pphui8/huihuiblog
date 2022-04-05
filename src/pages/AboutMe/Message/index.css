@@ -1,0 +1,103 @@
+@keyframes blogInAnimation {
+    0% {
+        transform: translateY(70px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.messageContainer {
+    border: 1px solid #000;
+    border-radius: 25px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    margin-bottom: 105px;
+    animation: blogInAnimation ease-out 2s; 
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+.messageContainer .editContainer {
+    padding-left: 10%;
+}
+.messageContainer .editContainer .user input {
+    width: 30%;
+    height: 50px;
+    border: none;
+    border-bottom: 1px dashed #9b9b9b;
+}
+.messageContainer .editContainer .user input:focus {
+    outline: none;
+    border-bottom: 1px dashed #fd3333;
+}
+input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: rgb(149, 149, 149)
+}
+textarea::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: rgb(149, 149, 149);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: large;
+}
+.messageContainer .editContainer textarea {
+    font-size: large;
+    border: none;
+    resize:none;
+    margin-top: 15px;
+    width: 92% !important;
+    margin-bottom: 5px;
+    min-height: 190px !important;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-bottom: 1px dashed #9b9b9b;
+    overflow: hidden;
+}
+.messageContainer .editContainer .previewBtn svg {
+    z-index: 3;
+    width: 20px;
+    transform: translate(-29px, -17px);
+}
+.messageContainer .editContainer textarea:focus {
+    outline: none;
+}
+.messageContainer .messageBottom {
+    width: 90% !important;
+    height: 40px;
+    margin-bottom: 10px;
+}
+.messageContainer .messageBottom .mdIcon {
+    width: 20px;
+    float: left;
+    margin-top: 10px;
+}
+.messageContainer .messageBottom .submit {
+    width: 54px;
+    height: 27px;
+    margin-left: 77%;
+    padding: 5px 5px 0 5px;
+    border-radius: 8px;
+    top: 1px;
+    right: 10px;
+    border: 1px solid #9b9b9b;
+    user-select: none;
+}
+.messageContainerNight {
+    background-color: #595959;
+    color: #c9d1d9;
+}
+.messageContainerNight .editContainer .user input {
+    background-color: transparent;
+    color: #c9d1d9;
+}
+.messageContainerNight .editContainer textarea {
+    background-color: transparent;
+    color: #c9d1d9;
+}
+.messageContainer .preview {
+    border: 1px solid #c9d1d9;
+    border-radius: 10px;
+    margin: 0 10% 30px 10%;
+    padding: 10px 10px 10px 10px;
+    overflow: hidden;
+    word-wrap: break-word;
+    word-break: break-all;
+}

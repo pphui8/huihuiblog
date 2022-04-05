@@ -59,7 +59,7 @@ export default function BlogContainer(props) {
           }
           {
             index.map((elem) => {
-              return <BlogCard isNight={isNight} key={elem.id} title={elem.name} desc={elem.descript}></BlogCard>
+              return <BlogCard isNight={isNight} key={elem.id} title={elem.name} desc={elem.descript} tag={elem.tag}></BlogCard>
             })
           }
         </div>

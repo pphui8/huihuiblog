@@ -21,7 +21,6 @@
     position: relative;
     width: 80%;
     left: 50%;
-    min-height: calc(100vh - 173px);
     transform: translateX(-50%);
 }
 .article .container .index {
@@ -66,8 +65,8 @@
     border: 1px solid #000;
     border-radius: 25px;
     padding: 30px;
-    margin-bottom: 105px;
-    min-height: calc(100vh - 200px);
+    margin-bottom: 10px;
+    min-height: 30px;
     animation: blogInAnimation ease-out 2s; 
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
