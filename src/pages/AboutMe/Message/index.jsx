@@ -78,6 +78,7 @@ export default function Message(props) {
       headers: {
         'Content-Type': 'application/json'
       },
+      mode: 'cors',
       body: JSON.stringify({
         username: inputUsername.trim(),
         url: inputUrl.trim(),
