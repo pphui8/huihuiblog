@@ -8,6 +8,7 @@ import './index.css'
 
 function Msg(props) {
   const msg = props.msg;
+  const isNight = props.isNight;
   const toUrl = () => {
     if(msg.url === "none") {
       return;
@@ -16,8 +17,10 @@ function Msg(props) {
   }
   return (
     <div className="msg">
-      <div className="msgTitle" onClick={toUrl}>{msg.username}</div>:
-      <div className="msgArticle">{msg.value}</div>
+      <div className="msgTitle" onClick={toUrl}>{msg.username + ':'}</div>
+      <div className={isNight ? 'msgArticle markdown-body-night' : 'msgArticle markdown-body'}>
+        <ReactMarkdown children={msg.value}></ReactMarkdown>
+      </div>
       <div className="timeTag">{msg.time}</div>
     </div>
   )
@@ -119,7 +122,7 @@ export default function Message(props) {
       {
         comments.map((item, index) => {
           return (
-            <Msg key={index} msg={item}></Msg>
+            <Msg key={index} msg={item} isNight={isNight}></Msg>
           )
         })
       }

@@ -119,14 +119,14 @@ textarea::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     margin: -1px;
 }
 .messageContainer .publshedMsg .msg .msgTitle {
-    display: inline-block;
+    display: block;
     font-size: larger;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: bold;
 }
 .messageContainer .publshedMsg .msg .msgArticle {
     display: inline-block;
-    margin-left: 6px;
+    margin-left: 42px;
     font-size: normal;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
