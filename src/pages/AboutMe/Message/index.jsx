@@ -73,7 +73,7 @@ export default function Message(props) {
     if(inputUrl === '') {
       inputUrl = 'none';
     }
-    fetch(`/myapi/addcomment`, {
+    fetch(`https://api.pphui8.me/addcomment`, {
       method: 'post',
       headers: {
         'Content-Type': 'application/json'
