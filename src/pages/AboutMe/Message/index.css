@@ -22,7 +22,7 @@
     padding-left: 10%;
 }
 .messageContainer .editContainer .user input {
-    width: 30%;
+    width: 44%;
     height: 50px;
     border: none;
     border-bottom: 1px dashed #9b9b9b;
@@ -100,4 +100,39 @@ textarea::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     overflow: hidden;
     word-wrap: break-word;
     word-break: break-all;
+}
+.messageContainer .publshedMsg {
+    width: 83% !important;
+    position: relative;
+    left: 51%;
+    margin-bottom: 10px;
+    transform: translateX(-50%);
+}
+.messageContainer .publshedMsg .msg {
+    width: 94%;
+    min-height: 40px;
+    padding: 10px 10px 10px 10px;
+    border: 1px solid #9b9b9b;
+    overflow: hidden;
+    word-wrap: break-word;
+    word-break: break-all;
+    margin: -1px;
+}
+.messageContainer .publshedMsg .msg .msgTitle {
+    display: inline-block;
+    font-size: larger;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+}
+.messageContainer .publshedMsg .msg .msgArticle {
+    display: inline-block;
+    margin-left: 6px;
+    font-size: normal;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.messageContainer .publshedMsg .msg .timeTag {
+    margin-top: 5px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: smaller;
+    color: #9b9b9b;
 }

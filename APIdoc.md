@@ -52,13 +52,6 @@
     "tag": "tag",
 }
 ```
-> ```
-> #### tag
-> 1.test  
-> 2.note  
-> 3.blog  
-> 4.code  
-> ```
 
 > ##### expected return
 ```json
@@ -72,8 +65,15 @@
     "error": "failed to add blog"
 }
 ```
+> ```
+> tag:
+> 1.test  
+> 2.note  
+> 3.blog  
+> 4.code  
+> ```
 
-#### ```DELETE``` / delblog / <blog_name> / <token>  &emsp;&emsp;>> delete blog
+#### ```GET``` / delblog / <blog_name> / <token>  &emsp;&emsp;>> delete blog
 > ##### expected return
 ```json
 // success
@@ -84,5 +84,55 @@
 {
     "status": "failed",
     "error": "wrong token"
+}GET
+```
+
+#### ```GET``` / comment &emsp;&emsp;>> get comment
+> ##### expected return
+```json
+[
+    {
+        "id":1,
+        "username":"pphui8",
+        "url":"pphui8.me",
+        "value":"test",
+        "time": "xxxx/xx/xx",
+    },
+    .....
+]
+```
+
+#### ```POST``` / addcomment  &emsp;&emsp;>> add comment
+> ##### request body format
+```json
+{
+    "username": "blog_name",
+    "url": "blog description",
+    "value": "pphui8",
+    "token": "xxx",
+    "time": "time",
+}
+```
+> ##### expected return
+```json
+# success
+{
+    "status": "success"
+}
+# failed
+{
+    "status": "failed",
+    "error": "failed to add blog"
+}
+```
+
+#### ```GET``` / filing  &emsp;&emsp;>> get filing
+> ##### expected return
+```json
+{ 
+    "test":0,
+    "note":0,
+    "blog":0,
+    "code":0,
 }
 ```
