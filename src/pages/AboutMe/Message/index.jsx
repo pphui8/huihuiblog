@@ -73,7 +73,7 @@ export default function Message(props) {
     if(inputUrl === '') {
       inputUrl = 'none';
     }
-    fetch(`http://localhost:3000/myapi/addcomment`, {
+    fetch(`/myapi/addcomment`, {
       method: 'post',
       headers: {
         'Content-Type': 'application/json'
