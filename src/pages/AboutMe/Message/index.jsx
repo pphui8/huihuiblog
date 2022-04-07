@@ -48,7 +48,7 @@ export default function Message(props) {
     fetch(`https://api.pphui8.me/comment`)
       .then(res => res.json())
       .then(res => {
-        res.sort((a, b) => a.id - b.id);
+        res.sort((a, b) => b.id - a.id);
         setComments(res);
       })
       .catch(err => console.log('Request Failed', err));
@@ -73,7 +73,7 @@ export default function Message(props) {
     if(inputUrl === '') {
       inputUrl = 'none';
     }
-    fetch(`/myapi/addcomment`, {
+    fetch(`http://localhost:3000/myapi/addcomment`, {
       method: 'post',
       headers: {
         'Content-Type': 'application/json'
