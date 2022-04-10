@@ -3,6 +3,7 @@ import { useLocation  } from "react-router-dom";
 import ReactMarkdown from 'react-markdown'
 import { Buffer } from 'buffer';
 import { AiFillFile, AiOutlineFolder } from 'react-icons/ai'
+import toast from 'react-hot-toast';
 import { nanoid } from 'nanoid'
 import '../../github-markdown-dark.css'
 import '../../github-markdown-light.css'
@@ -43,12 +44,14 @@ export default function Article(props) {
             deal_index(res);
             return res;
           })
-          .catch(err => console.log('Request Failed', err));
+          .catch(err => toast.error(`Request Failed`));
       })
-      .catch(err => console.log('Request Failed', err))
+      .catch(err => toast.error(`Request Failed`))
   }
 
   useEffect(async () => {
+    cur_index = [];
+    cur_file = [];
     getBlogIndex();
   }, [])
 
@@ -120,7 +123,7 @@ export default function Article(props) {
         toPath(pre_url);
         pre_url = null;
       } else {
-        alert("you are already at the root of this blog");
+        toast.error("you are already at the root of this blog");
       }
       return;
     }
@@ -135,7 +138,7 @@ export default function Article(props) {
       deal_index(res);
       return res;
     })
-    .catch(err => console.log('Request Failed', err));
+    .catch(err => toast.error(`Request Failed`));
   }
 
   function showFile(url, filename) {
@@ -148,28 +151,44 @@ export default function Article(props) {
         if(filename.search(".md") === -1) tmp = "```" + tmp + "```";
         setArticle(tmp);
       })
-      .catch(err => console.log('Request Failed', err));
+      .catch(err => toast.error(`Request Failed`));
   }
 
   return (
     <div className='article'>
       <div className="container">
-        <ul className={isNight ? `index_night` : `index`} id="blogTreeContainer">
-          {
-            cur_index.map((value) => {
-              return <li key={nanoid()} onClick={()=>toPath(value.url)}><AiOutlineFolder/>{value.name}</li>
-            })
-          }
-          {
-            cur_file.map((value) => {
-              return <li key={nanoid()} onClick={()=>showFile(value.url, value.name)}><AiFillFile/>{value.name}</li>
-            })
-          }
-        </ul>
-        <div className={isNight ? 'article markdown-body-dark' : 'article markdown-body'}>
-          <ReactMarkdown children={article}></ReactMarkdown>
-        </div>
+        <Curfile cur_index={cur_index} cur_file={cur_file}></Curfile>
+        <Article article={article}></Article>
       </div>
     </div>
   )
+
+  function Curfile(props) {
+    const cur_index = props.cur_index;
+    const cur_file = props.cur_file;
+    return (
+      <ul className={isNight ? `index_night` : `index`} id="blogTreeContainer">
+        {
+          cur_index.map((value) => {
+            return <li key={nanoid()} onClick={()=>toPath(value.url)}><AiOutlineFolder/>{value.name}</li>
+          })
+        }
+        {
+          cur_file.map((value) => {
+            return <li key={nanoid()} onClick={()=>showFile(value.url, value.name)}><AiFillFile/>{value.name}</li>
+          })
+        }
+      </ul>
+    )
+  }
+
+  function Article(props) {
+    const article = props.article;
+    return (
+      <div className={isNight ? 'article markdown-body-dark' : 'article markdown-body'}>
+        <ReactMarkdown children={article}></ReactMarkdown>
+      </div>
+    )
+  }
+
 }

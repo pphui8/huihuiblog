@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import toast from 'react-hot-toast';
 import "./index.css"
 
 export default function Filing(props) {
@@ -8,7 +9,7 @@ export default function Filing(props) {
     fetch(`https://api.pphui8.me/filing`)
       .then(res => res.json())
       .then(res => setTagCount(res))
-      .catch(err => console.log('Request Failed', err));
+      .catch(err => toast.error("request failed"));
   }
 
   useEffect(() => {

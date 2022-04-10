@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { Toaster } from 'react-hot-toast'
 import Header from './components/Header'
 import Home from './pages/Home'
 import API from './pages/API'
@@ -44,6 +45,7 @@ export default function App(props) {
 
   return (
     <div className={isNight ? `body_night` : ``}>
+      <Toaster />
         <Header isNight={isNight} setNight={lightSwitch}></Header>
         {/* 注册路由 */}
         <Routes>

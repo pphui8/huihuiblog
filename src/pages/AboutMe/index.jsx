@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
+import toast from 'react-hot-toast'
 import '../../github-markdown-dark.css'
 import '../../github-markdown-light.css'
 import './index.css'
@@ -17,7 +18,7 @@ export default function AhoutMe(props) {
     fetch(`https://raw.githubusercontent.com/pphui8/pphui8/main/README.md`)
       .then(response => response.text())
       .then(res => setArticle(res))
-      .catch(err => console.log('Request Failed', err));
+      .catch(err => toast.error("request failed"));
   }
   useEffect(async () => {
     getReadMe();
