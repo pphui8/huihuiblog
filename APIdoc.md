@@ -126,6 +126,20 @@
 }
 ```
 
+#### ```GET``` / delcomment / <comment_id> / <token>  &emsp;&emsp;>> delete comment
+> ##### expected return
+```json
+// success
+{
+    "status": "success"
+}
+// failed
+{
+    "status": "failed",
+    "error": "wrong token"
+}GET
+```
+
 #### ```GET``` / filing  &emsp;&emsp;>> get filing
 > ##### expected return
 ```json
