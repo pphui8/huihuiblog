@@ -10,7 +10,6 @@
     "antd": "^4.18.8",
     "buffer": "^6.0.3",
     "github-markdown-css": "^5.1.0",
-    "http-proxy-middleware": "^2.0.4",
     "localStorage": "^1.0.4",
     "nanoid": "^3.3.2",
     "react": "^17.0.2",

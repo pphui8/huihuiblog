@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react'
+import config from '../../../config'
 import toast from 'react-hot-toast';
 import "./index.css"
 
 export default function Filing(props) {
   const [tagCount, setTagCount] = useState({});
   const isNight = props.isNight;
+  const baseURL = config.baseURL;
   const getFiling = () => {
-    fetch(`https://api.pphui8.me/filing`)
-      .then(res => res.json())
-      .then(res => setTagCount(res))
-      .catch(err => toast.error("request failed"));
+    fetch(baseURL + `filing`)
+      .then((res) => res.json())
+      .then((res) => setTagCount(res))
+      .catch((err) => toast.error("request failed"));
   }
 
   useEffect(() => {

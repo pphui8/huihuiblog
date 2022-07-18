@@ -6,6 +6,7 @@ import ReactMarkdown from 'react-markdown'
 import '../../../github-markdown-dark.css'
 import '../../../github-markdown-light.css'
 import './index.css'
+import config from "../../../config";
 
 function Msg(props) {
   const msg = props.msg;
@@ -29,6 +30,7 @@ function Msg(props) {
 
 export default function Message(props) {
   const isNight = props.isNight;
+  const baseURL = config.baseURL;
   const [message, setMessage] = useState("");
   const [showPreview, setShowPreview] = useState(false);
   const [comments, setComments] = useState([]);
@@ -49,13 +51,13 @@ export default function Message(props) {
     }
   }
   const getComment = () => {
-    fetch(`https://api.pphui8.me/comment`)
-      .then(res => res.json())
-      .then(res => {
+    fetch(baseURL + `comment`)
+      .then((res) => res.json())
+      .then((res) => {
         res.sort((a, b) => b.id - a.id);
         setComments(res);
       })
-      .catch(err => toast.error("request failed"));
+      .catch((err) => toast.error("request failed"));
   }
 
   useEffect(() => {
@@ -85,32 +87,32 @@ export default function Message(props) {
     if(inputUrl === '') {
       inputUrl = 'none';
     }
-    let result = fetch(`https://api.pphui8.me/addcomment`, {
-      method: 'post',
+    let result = fetch(baseURL + `addcomment`, {
+      method: "post",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-      mode: 'cors',
+      mode: "cors",
       body: JSON.stringify({
         username: inputUsername.trim(),
         url: inputUrl.trim(),
         value: inputMsg.trim(),
-        token: 'pphui8',
-        time: new Date().toLocaleString().split(' ')[0],
-      })
-    }).then(res => {
-      document.querySelector('#inputUsername').value = '';
-      document.querySelector('#inputUrl').value = '';
-      document.querySelector('#userMessage').value = '';
+        token: "pphui8",
+        time: new Date().toLocaleString().split(" ")[0],
+      }),
+    }).then((res) => {
+      document.querySelector("#inputUsername").value = "";
+      document.querySelector("#inputUrl").value = "";
+      document.querySelector("#userMessage").value = "";
       let comment = {
         id: Number.MAX_SAFE_INTEGER,
         username: inputUsername.trim(),
         url: inputUrl.trim(),
         value: inputMsg.trim(),
-        time: new Date().toLocaleString().split(' ')[0],
-      }
+        time: new Date().toLocaleString().split(" ")[0],
+      };
       setComments([comment, ...comments]);
-    })
+    });
     return result;
   }
 

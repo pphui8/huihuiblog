@@ -3,6 +3,7 @@ import { useLocation  } from "react-router-dom";
 import ReactMarkdown from 'react-markdown'
 import { Buffer } from 'buffer';
 import { AiFillFile, AiOutlineFolder } from 'react-icons/ai'
+import config from '../../config'
 import toast from 'react-hot-toast';
 import { nanoid } from 'nanoid'
 import '../../github-markdown-dark.css'
@@ -16,7 +17,7 @@ let cur_url = null;
 let pre_url = null;
 
 export default function Article(props) {
-  const root = `api.pphui8.me`;
+  const baseURL = config.baseURL;
   const title = useLocation().state.title;
   const [blogRoot, setBlogRoot] = useState("");
   const [article, setArticle] = useState("Loading...");
@@ -25,28 +26,29 @@ export default function Article(props) {
   // 通过项目名获取项目文件树
   const getBlogIndex = () => {
     // 获取跟目录名
-    fetch(`https://` + root + `/blog/` + title, {
-        method: `GET`,
-        mode: `cors`,
+    fetch(baseURL + '/blog/' + title, {
+      method: `GET`,
+      mode: `cors`,
     })
-      .then(response => response.json())
-      .then(res => {
-        let blogRoot = res.blog_root.replace("\"","").replace("\"","");
+      .then((response) => response.json())
+      .then((res) => {
+        let blogRoot = res.blog_root.replace('"', "").replace('"', "");
         setBlogRoot(blogRoot);
         return blogRoot;
       })
       .then((blogRoot) => {
-        cur_url = `https://api.github.com/repos/pphui8/` + blogRoot + `/git/trees/main`;
+        cur_url =
+          `https://api.github.com/repos/pphui8/` + blogRoot + `/git/trees/main`;
         // 获取目录
         fetch(cur_url)
-          .then(response => response.json())
-          .then(res => {
+          .then((response) => response.json())
+          .then((res) => {
             deal_index(res);
             return res;
           })
-          .catch(err => toast.error(`Request Failed`));
+          .catch((err) => toast.error(`Request Failed`));
       })
-      .catch(err => toast.error(`Request Failed`))
+      .catch((err) => toast.error(`Request Failed`));
   }
 
   useEffect(async () => {

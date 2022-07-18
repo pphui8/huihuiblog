@@ -1,11 +1,12 @@
 import React, { useEffect, useState, useLayoutEffect } from 'react'
 import BlogCard from '../BlogCard'
 import './index.css'
+import config from '../../../../config';
 
 let index = [];
 
 export default function BlogContainer(props) {
-  const root = `api.pphui8.me`;
+  const baseURL = config.baseURL;
   const isNight = props.isNight;
   const [blogs, setBlogs] = useState([]);
   const tomodati = {
@@ -15,7 +16,7 @@ export default function BlogContainer(props) {
 
   // 获取列表
   const getIndex = () => {
-    fetch(`https://` + root + `/index`, {
+    fetch(baseURL + `/index`, {
       method: `GET`,
       mode: `cors`
     })

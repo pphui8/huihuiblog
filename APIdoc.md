@@ -4,7 +4,7 @@
 
 ```API specification？``` RESTful api
 
-```root:``` &emsp; https://api.pphui8.me
+```root:``` &emsp; https://api.pphui8.com
 
 ---
 
@@ -94,7 +94,7 @@
     {
         "id":1,
         "username":"pphui8",
-        "url":"pphui8.me",
+        "url":"pphui8.com",
         "value":"test",
         "time": "xxxx/xx/xx",
     },

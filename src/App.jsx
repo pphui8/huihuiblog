@@ -9,7 +9,6 @@ import Footer from './components/Footer'
 import { Routes, Route, Navigate } from 'react-router-dom'
 
 import './App.css'
-import './night.css'
 
 let origin_light = false;
 export default function App(props) {

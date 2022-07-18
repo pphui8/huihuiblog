@@ -24,7 +24,7 @@ export default function Header(props) {
                 <Link to="/"><h1>huihuiblog</h1></Link>
               </li>
               <li>
-                <a href="https://pphui8.me"><p>home</p></a>
+                <a href="https://pphui8.com"><p>home</p></a>
               </li>
               <li>
                 <Link to="/API"><p>API</p></Link>
