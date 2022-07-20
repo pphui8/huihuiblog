@@ -46,10 +46,14 @@
     position: absolute;
     color: #000;
     left: 40px;
+    right: 45px;
     top: 50%;
     transform: translateY(-50%);
     font-weight: 600;
     font-size: 19px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
 }
 .blog .disc {
     position: relative;
@@ -59,9 +63,17 @@
 .blog .disc p {
     position: absolute;
     left: 40px;
+    right: 30px;
     top: 10%;
     font-weight: 300;
     font-size: 14px;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    white-space: normal !important;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
 }
 .blog .blog_line {
     width: 100%;

@@ -11,7 +11,9 @@ export default function BlogCard(props) {
   return (
       <div className={isNight ? `blog_night` : `blog`}>
         <Link to={`/article`} state={{"title": title}}>
-          <div className="title"><p>{title}</p></div>
+          <div className="title">
+            <p>{title}</p>
+          </div>
         </Link>
         <div className="blog_line"></div>
         <div className="disc"><p>{desc}</p></div>
