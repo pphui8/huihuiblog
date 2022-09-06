@@ -49,7 +49,7 @@
     "desc": "blog description",
     "value": "pphui8",
     "token": "xxxx",
-    "tag": "tag",
+    "tag": "tag"
 }
 ```
 
